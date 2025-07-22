@@ -1,19 +1,15 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 2rem;
+  padding: 1rem;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   max-width: 300px;
+  gap: 0.5rem;
 }
 
-label {
-  margin-bottom: 0.5rem;
-}
-
-button {
-  margin-top: 1rem;
-  padding: 0.5rem;
+input, select, button {
+  padding: 0.25rem;
 }

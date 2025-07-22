@@ -1,21 +1,29 @@
 # Megadrop APR Calculator
 
-This project provides a simple APR calculator for ByBit Megadrop rewards. It is built with TypeScript, SCSS and served by a Node server behind Nginx via Docker Compose.
+A small React application that calculates APR rewards for ByBit Megadrop events.
+The app is built with Vite and TypeScript and served as static files through
+Nginx using Docker.
 
 ## Development
 
-The source files are located under `src/`. To build the project locally you need Node and npm:
+Install dependencies and start the dev server:
 
 ```bash
 npm install
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+To create a production build:
+
+```bash
 npm run build
 ```
 
-The compiled files will appear in `dist/` and `public/`.
-
 ## Docker
 
-Use Docker Compose to build and run the application:
+Build the image and run the container with Docker Compose:
 
 ```bash
 docker-compose up --build

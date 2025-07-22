@@ -3,15 +3,13 @@ FROM node:18-alpine AS build
 WORKDIR /app
 COPY package.json .
 RUN npm install
-COPY tsconfig*.json ./
+COPY tsconfig.json vite.config.ts index.html ./
 COPY src ./src
 RUN npm run build
 
 # production stage
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/public ./public
-COPY package.json .
-RUN npm install --omit=dev
-CMD ["node", "dist/server.js"]
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
