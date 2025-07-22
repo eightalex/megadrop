@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Megadrop APR Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Megadrop APR Calculator</h1>
+  <div class="form">
+    <label>Total Points <input id="totalPoints" type="number" step="any"></label>
+    <label>My Points <input id="myPoints" type="number" step="any"></label>
+    <label>Total Tokens <input id="totalTokens" type="number" step="any"></label>
+    <label>Token Price (USDT) <input id="tokenPrice" type="number" step="any"></label>
+    <label>Deposit Value (USDT) <input id="deposit" type="number" step="any"></label>
+    <label>Hold Days
+      <select id="holdDays">
+        <option value="14">14</option>
+        <option value="30">30</option>
+      </select>
+    </label>
+    <button id="calc">Calculate</button>
+  </div>
+  <pre id="result"></pre>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
